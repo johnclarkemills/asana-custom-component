@@ -345,15 +345,10 @@ class AsanaTaskSensor(entity.Entity):
     def _update_sensor_state(self):
         """Updates the state of the sensor.
 
-        By default uses the first monitored variable value.
-        If no monitored variables, just sets as "OK".
+        Since we dont use the value, only the atributes,
+        just set this as 1
         """
-
-        self._state = (
-            self._attributes[self._state_attribute_name][0:5]
-            if self._state_attribute_name
-            else "OK"
-        )
+        self._state = 1
 
     # Hass.io properties.
     @property
